@@ -4,3 +4,4 @@ webpack是一个模块打包工具。
 - [output](https://github.com/andyChenAn/webpack-learn/tree/master/output/output.md)
 - [module](https://github.com/andyChenAn/webpack-learn/tree/master/module/module.md)
 - [resolve](https://github.com/andyChenAn/webpack-learn/tree/master/resolve/resolve.md)
+- [plugins](https://github.com/andyChenAn/webpack-learn/tree/master/plugins/plugins.md)
