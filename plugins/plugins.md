@@ -11,27 +11,27 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-	entry : './app.js',
-	output : {
-		path : path.resolve(__dirname , 'dist'),
-		filename : 'bundle.js'
-	},
-	plugins : [
-		new HtmlWebpackPlugin({
-			title : 'webpack-demos',
-			filename : 'assets/index.html',
-			template : './template/andy.ejs',
-			inject : 'body'
-		})
-	],
-	module : {
-		rules : [
-			{
-				test : /\.ejs$/,
-				use : 'ejs-loader'
-			}
-		]
-	}
+    entry : './app.js',
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : 'bundle.js'
+    },
+    plugins : [
+        new HtmlWebpackPlugin({
+            title : 'webpack-demos',
+            filename : 'assets/index.html',
+            template : './template/andy.ejs',
+            inject : 'body'
+        })
+    ],
+    module : {
+        rules : [
+            {
+                test : /\.ejs$/,
+                use : 'ejs-loader'
+            }
+        ]
+    }
 }
 ```
 html-webpack-plugin插件其实有比较多的选项，比如，上面的代码中的title，filename，template，inject，就是其中的一些。
@@ -171,3 +171,38 @@ module.exports = {
 };
 ```
 这样通过html-webpack-plugin插件的使用，我们就能够灵活的生成html文件。
+
+- 入口文件中的公共部分打包在一个文件中
+
+在webpack4之前，我们使用CommonChunkPlugin插件来实现，不过在webpack4之后，删除了这一个插件，而是使用配置选项optimization.splitChunks来实现。
+```
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+    entry : {
+        demo1 : './demo1.js',
+        demo2 : './demo2.js'
+    },
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : '[name].js'
+    },
+    plugins : [
+        new HtmlWebpackPlugin({
+            title : 'webpack-demo',
+            filename : 'demo.html',
+            inject : true
+        })
+    ],
+    mode : 'development',
+    optimization : {
+        splitChunks : {
+            name : 'common',  //公共文件的文件名
+            chunks : 'initial',
+            minChunks : 2,
+            minSize : 0
+        }
+    }
+};
+```
