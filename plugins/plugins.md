@@ -261,3 +261,54 @@ console.log(_)
 代码后的结果：
 
 ![image](https://github.com/andyChenAn/webpack-learn/raw/master/plugins/image/1.png)
+
+- 打包css
+
+将css打包到一个css文件中，我们可以通过extract-text-webpack-plugin插件来实现，不过在webpack4的时候，要使用以下版本，不然没有效果
+```
+"extract-text-webpack-plugin": "^4.0.0-beta.0"
+```
+
+```
+const path = require('path');
+const webpack = require('webpack');
+const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+    entry : './app.js',
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : 'bundle.js'
+    },
+    mode : 'development',
+    module : {
+        rules : [
+            {
+                test : /\.css$/,
+                use : ExtractTextWebpackPlugin.extract({
+                    fallback : 'style-loader',
+                    use : 'css-loader'
+                })
+            }
+        ]
+    },
+    plugins : [
+        new ExtractTextWebpackPlugin('style.css'),
+        new HtmlWebpackPlugin({
+            title : 'extract',
+            filename : 'demo.html'
+        })
+    ]
+}
+```
+
+```
+// app.js
+import './css/index.css';
+require('./css/app.css');
+const box = document.createElement('div');
+box.innerHTML = 'hello adhyche';
+box.setAttribute('class' , 'app');
+document.body.appendChild(box);
+
+```
