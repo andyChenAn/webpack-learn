@@ -206,3 +206,58 @@ module.exports = {
     }
 };
 ```
+- 将第三方的框架（类库）的引入和抽离
+
+想要使用webpack将第三方的框架或类库抽离，我们可以使用webpack4中的optimization.splitChunks选项以及webpack自身的ProvidePlugin插件，两者结合使用。
+
+optimization.splitChunks用来分离公共模块的，而ProvidePlugin插件可以无需通过import或require来加载模块，它会自动加载模块。
+```
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+module.exports = {
+    entry : {
+        app : './app.js'
+    },
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : '[name].bundle.js'
+    },
+    mode : 'development',
+    plugins : [
+        new webpack.ProvidePlugin({
+            $ : 'jquery',
+            Vue : ['vue' , 'default'],
+            _ : 'underscore'
+        }),
+        new HtmlWebpackPlugin({
+            title : '第三方框架或类库抽离到单独文件',
+            filename : 'vendor.html',
+            inject : true
+        })
+    ],
+    optimization : {
+        splitChunks : {
+            name : 'common',
+            chunks : 'all',
+            minChunks : 1,
+            minSize : 10000
+        }
+    },
+    resolve : {
+        alias : {
+            'vue$' : 'vue/dist/vue.esm.js'
+        }
+    }
+};
+```
+
+```
+// app.js
+console.log(Vue)
+console.log($.prototype)
+console.log(_)
+```
+代码后的结果：
+
+![image](https://github.com/andyChenAn/webpack-learn/raw/master/plugins/image/1.png)
