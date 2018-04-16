@@ -212,3 +212,32 @@ module.exports = {
 }
 ```
 #### 打包字体图标
+我们会经常用到一些字体图标，我们通过url-loader来打包
+```
+const path = require('path');
+module.exports = {
+    entry : './app.js',
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : 'bundle.js'
+    },
+    mode : 'development',
+    module : {
+        rules : [
+            {
+                test : /\.(eot|svg|ttf|woff)$/,
+                use : {
+                    loader : 'url-loader',
+                    options : {
+                        limit : 5000
+                    }
+                }
+            },
+            {
+                test : /\.css$/,
+                use : ['style-loader' , 'css-loader']
+            },
+        ]
+    }
+}
+```
