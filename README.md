@@ -8,3 +8,5 @@ webpack是一个模块打包工具。
 - [打包](https://github.com/andyChenAn/webpack-learn/tree/master/打包/package.md)
 - [devServer](https://github.com/andyChenAn/webpack-learn/tree/master/devServer/devServer.md)
 - [target](https://github.com/andyChenAn/webpack-learn/tree/master/target/target.md)
+- [devtool](https://github.com/andyChenAn/webpack-learn/tree/master/devtool/devtool.md)
+
