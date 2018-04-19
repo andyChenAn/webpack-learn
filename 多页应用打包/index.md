@@ -2,6 +2,7 @@
 使用webpack，我们可以给单页面应用打包，也可以给多页面应用打包。我这里实现了一个简单的多页面应用打包：
 
 整体项目目录结构如下：
+
 ![目录1](https://github.com/andyChenAn/webpack-learn/raw/master/多页应用打包/image/1.png)
 
 ```
@@ -87,6 +88,7 @@ module.exports = {
 - 将publicPath设置为"/dist"，表示浏览器加载打包后的文件是从dist目录下访问的
 
 打包后的目录结构如下：
+
 ![目录2](https://github.com/andyChenAn/webpack-learn/raw/master/多页应用打包/image/2.png)
 
 当我们执行webpack-dev-server命令时，可以直接在localhost:8080/dist/home/home.html打开页面，但是通过webpack命名打包后，直接点击html文件，加载不出js文件和css文件，显示的路径是下面这样：
