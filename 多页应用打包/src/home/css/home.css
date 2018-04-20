@@ -1,0 +1,221 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fieldset, lengend, button, input, textarea, th, td, form{margin: 0;padding: 0;}
+body, table, button, input, select, textarea{font: 14px/1.5 'Segoe UI', Arial, sans-serif;}
+body{color:#333333;}
+label{cursor: pointer;}
+h1, h2, h3, h4, h5, h6{ font-size: 100%; }
+address, cite, dfn, em, var{ font-style: normal; } 
+code, kbd, pre, samp, tt{ font-family: "Courier New", Courier, monospace; } 
+small{ font-size: 12px; } 
+ul,li,ol{ list-style: none; }
+a{text-decoration: none; color: #009999;}
+a:hover{text-decoration: none; color:#006666;}
+a:active{color: #009999;}
+legend{color: #333333;} 
+abbr[title], acronym[title]{border-bottom: 1px solid; cursor: help;}
+q:before, q:after{content: '';}
+fieldset, img{border: none;} 
+button, input, select, textarea{font-size: 100%;}
+table{border-collapse: collapse; border-spacing: 0;}
+hr{border: none; height: 1px;}
+html{overflow-y: scroll;}
+iframe body{ padding:0; margin:0;} 
+a{outline:none!important; *hide-focus:expression(this.hideFocus=true);}
+input,button,select,textarea{outline:none}
+h1{font-size:28px;font-weight:bold;color:#333333;margin-bottom:10px;margin:0 10px 10px 0px;cursor:default}
+
+/*职友集头部  start*/
+.jobui-header-container{
+	height:50px;
+	line-height:50px;
+	padding:0 15px;
+	position:relative;
+	z-index:100;
+	background-color:#f2f2f2;
+	border-bottom:1px solid #e4e4e4;
+	box-sizing:border-box;
+}
+.flex{
+	display:flex;
+	display:-webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items:center;
+}
+.flex-nocenter{
+	display:flex;
+	display:-webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+}
+.jobui-header-slogan{
+	display:flex;
+	display:-webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items:center;
+}
+.slogan-desc{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+}
+.jobui-header-findlink{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex : 1;
+	-ms-flex : 1;
+	color:#999 !important;
+	margin-right: 10px;
+	font-size: 24px !important;
+}
+.jobui-header-user{
+	display: block;
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	position:relative;
+	top:1px;
+	border-radius: 50%;
+	box-shadow: 0 1px 2px #ccc;
+}
+/*职友集头部  end*/
+
+/*四大首页banner区   start*/
+.jobui-banner{
+	text-align: center;
+	padding: 40px 15px;
+	box-shadow: 0 2px 5px #ccc;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+.jobui-banner-box{
+	margin: 0 auto;
+	margin-bottom: 30px;
+	background-color: #fff;
+	position: relative;
+}
+.jobui-banner-logo{
+	font-size: 28px;
+    color: #099;
+    margin: 0 auto;
+}
+.jobui-banner-logo img{
+	display: block;
+	margin: 0 auto;
+}
+.jobui-banner-company-slogan{
+	font-size: 16px;
+	color: #f60;
+	display: block;
+}
+.jobui-banner-slogan{
+	font-size: 16px;
+	color: #f60;
+	margin-bottom: 20px;
+	display: block;
+	text-align: right;
+	width:154px;
+	margin:0 auto
+}
+.jobui-banner-search-box{
+	padding:10px 15px;
+}
+.jobui-banner-search{
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 16px;
+}
+.jobui-banner-search-text{
+	font-size: 18px;
+	width: 100%;
+	box-sizing:border-box; 
+	outline: none; 
+	border-radius: 4px; 
+	border: 2px solid #e4e4e4; 
+	padding: 12px 45px 12px 20px;
+	-webkit-appearance:none;
+	background-color: #FAFAFA;
+	font-weight: bold;
+}
+input::-webkit-input-placeholder{
+	color: #ccc;
+}
+.jobui-banner-search-submit{
+	position: absolute;
+	top: 1px;
+	right: 0px;
+	color: #099;
+	border: none;
+	background-color: transparent;
+	width: 50px;
+	height: 45px;
+	line-height: 45px;
+}
+.jobui-banner-data{
+	font-size: 14px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.jobui-banner-data a{
+	background-color: #f2f2f2;
+    color: #333!important;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.arrow-down-icon{
+	vertical-align: middle;
+	font-size: 12px !important;
+	color: #666;
+}
+.jobui-banner-data-desc{
+	vertical-align:middle;
+	font-size: 14px;
+	color: #999;
+}
+.jobui-banner-main-nav1{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+}
+.jobui-banner-main-nav1 a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	flex:1;
+	-webkit-flex:1;
+	padding:10px 0;
+	border-bottom:1px solid #f2f2f2;
+	border-right:1px solid #f2f2f2;
+}
+.jobui-banner-main-nav1 a:last-child {
+	border-right:none;
+}
+.jobui-banner-main-nav1 a.banner-nav-selected {
+	color: #099;
+}
+.jobui-banner-main-nav2{
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+}
+.jobui-banner-main-nav2 a {
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	flex:1;
+	-webkit-flex:1;
+	padding:10px 0;
+	border-right:1px solid #f2f2f2;
+}
+.jobui-banner-main-nav2 a:last-child {
+	border-right:none;
+}
+.jobui-banner-main-nav2 a.banner-nav-selected {
+	color: #099;
+}
+/*四大首页banner区   end*/

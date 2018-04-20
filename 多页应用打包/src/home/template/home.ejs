@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <div class="mobile cfix">
+		<div class="jobui-header-container">
+            <div class="jobui-header-slogan">
+                <div class="slogan-desc">
+                    <a href="/"><em class="iconfont gray9">&#xe65d;</em><span class="gray6">职友集：让工作决策更聪明</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="j-page-index jobui-banner">
+            <div class="jobui-banner-box">
+                <h1 class="jobui-banner-logo">
+                    <img src="http://htm4.jobui.com/template_1/images/logo-wap-index-new.png" alt="职友集">
+                </h1>
+            </div>
+            <div style="margin-bottom:20px;">
+                <div class="jobui-banner-main-nav1">
+                    <a href="/" >工作</a>
+                    <a href="/cmp" class="banner-nav-selected">公司</a>
+                    <a href="/salary" >工资</a>
+                    <a href="/trends/" >趋势</a>
+                </div>
+                <div class="jobui-banner-main-nav2">
+                    <a href="/rank/company/view/shenzhen/">人气雇主</a>
+                    <a href="http://m.jobui.com/cmp/album/">公司专辑</a>
+                    <a href="http://m.jobui.com/rank/product/download/1000/">APP点评</a>
+                    <a href="http://m.jobui.com/rank/product/download/2000/">游戏点评</a>
+                </div>
+            </div>
+            <div class="jobui-banner-search">
+                <form action="/cmp" method="get" class="relative">
+                    <input type="text"  class="j-keywordLenovo jobui-banner-search-text" placeholder="输入公司或产品名称" value="" data-set-tipslist="company" name="keyword" x-webkit-speech="" autocomplete="off" />
+                    <input id="citykw" type="hidden" value="全国" name="cityKw" />
+                    <button type="submit" class="iconfont jobui-banner-search-submit">&#xe615;</button>
+                </form>
+            </div>
+            <div class="jobui-banner-data">
+                <a href="/changecity/?from=http://m.jobui.com/cmp">深圳
+                    <em class="iconfont arrow-down-icon">&#x80007;</em>
+                </a>
+                <span class="jobui-banner-data-desc">
+                        58.7万家公司，510条网友点评
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
