@@ -601,8 +601,10 @@ class WebpackOptionsApply extends OptionsApply {
 		new JavascriptModulesPlugin().apply(compiler);
 		new JsonModulesPlugin().apply(compiler);
 		new WebAssemblyModulesPlugin().apply(compiler);
-
+        
+        // 调用该插件，触发entry入口文件
 		new EntryOptionPlugin().apply(compiler);
+		// 触发entryOption事件
 		compiler.hooks.entryOption.call(options.context, options.entry);
 
 		new CompatibilityPlugin().apply(compiler);
@@ -738,3 +740,5 @@ class WebpackOptionsApply extends OptionsApply {
 
 
 [参考这里](https://github.com/DDFE/DDFE-blog/issues/12#ref-issue-205307666)
+
+[这里讲的更详细](https://fengmiaosen.github.io/2017/03/21/webpack-core-code/)
