@@ -12,6 +12,7 @@ webpack是一个模块打包工具。
 - [多页应用打包](https://github.com/andyChenAn/webpack-learn/tree/master/多页应用打包/index.md)
 - [webpack执行过程](https://github.com/andyChenAn/webpack-learn/tree/master/webpack执行过程/index.md)
 - [webpack插件](https://github.com/andyChenAn/webpack-learn/tree/master/webpack插件/index.md)
+- [打包vue应用](https://github.com/andyChenAn/webpack-learn/tree/master/打包vue应用/index.md)
 
 
 
