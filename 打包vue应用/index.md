@@ -5,9 +5,7 @@
 ```
 // App.vue文件
 <template>
-    <div id="app">
-        <h1>{{message}}</h1>
-    </div>
+    <h1>{{message}}</h1>
 </template>
 <script>
 export default {
@@ -48,57 +46,22 @@ new Vue({
 - 第三步：创建webpack.config.js文件
 ```
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = {
-    entry : './src/app.js',
+    entry : './main.js',
     output : {
         path : path.resolve(__dirname , 'dist'),
-        filename : 'build.js',
-        publicPath : '/'
+        filename : 'bundle.js'
     },
     mode : 'development',
     module : {
         rules : [
             {
                 test : /\.vue$/,
-                loader : 'vue-loader',
-                options : {
-                    extractCSS : true
-                }
-            },
-            {
-                test : /\.js$/,
-                use : 'babel-loader'
+                use : 'vue-loader',
+                exclude : /node_moduels/
             }
         ]
-    },
-    resolve : {
-        alias : {
-            'vue$' : 'vue/dist/vue.esm.js'
-        }
-    },
-    optimization : {
-        splitChunks : {
-            name : 'commons',
-            chunks : 'all',
-            minChunks : 1
-        }
-    },
-    devtool : 'cheap-eval-source-map',
-    plugins : [
-        new ExtractTextPlugin('style.css'),
-        new HtmlWebpackPlugin({
-            title : '打包vue应用',
-            filename : 'index.html',
-            template : 'index.html',
-            inject : true
-        }),
-        new OpenBrowserPlugin({
-            url : 'http://localhost:8080'
-        })
-    ]
+    }
 };
 ```
 ### 用法：
