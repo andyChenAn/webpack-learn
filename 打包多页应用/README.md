@@ -148,4 +148,5 @@ module.exports = {
 通过："npm install"来安装所有依赖，然后执行npm run dev命令即可。
 
 打包后的项目目录结构如下：
+
 ![目录2](https://github.com/andyChenAn/webpack-learn/raw/master/打包多页应用/image/2.png)
