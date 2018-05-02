@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+.trends-analysis-desc{
+	text-align: center;
+	color: #099;
+	margin-bottom: 10px;
+}
+.trends-analysis-area{
+	text-align: center;
+	margin-bottom: 10px;
+	color: #090;
+}
+.trend-area-rank{
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items:center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.trend-area-rank:last-child{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.trend-area-rank-list{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+}
+.trend-area-rank-list:last-child{
+	text-align: right;
+}
+.trend-area-rank-list:nth-child(2){
+	text-align: center;
+}
+.trend-area-ranking{
+	width: 20px;
+    display: inline-block;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+}
+.trend-ranking-list{
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items : center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.trend-ranking-list > a {
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+}
+.trend-ranking-btn {
+	text-align: center;
+}
+.trend-report-dot {
+	font-weight:bold;
+	padding:0 2px;
+}

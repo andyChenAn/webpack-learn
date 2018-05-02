@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+/*公司首页样式  start*/
+.industry-type{
+	padding:2px 5px;
+	color:#fff;
+	border-radius:5px;
+	font-size:12px;
+	background-color: #099;
+	margin-right: 5px;
+}
+.index-page-list{
+	display:flex;
+	display:-webkit-flex;
+	align-items:center;
+	margin-bottom:10px;
+	padding-bottom:10px;
+	border-bottom:1px solid #f2f2f2;
+}
+.index-page-list-content{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.index-page-last-list{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+/*公司首页样式  start*/
+
+/*公司首页最新上榜和最佳人气模块样式  start*/
+.index-newRank-nav{
+	width:88px;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	color:#999;
+	padding:10px 0;
+	box-sizing:border-box;
+	float:left;
+	
+}
+.index-bestPopularity-nav{
+	flex:1;
+	-webkit-flex:1;
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+	color:#999;
+	padding:10px 0;
+	box-sizing:border-box;
+}
+.index-company-name {
+	color: #333;
+}
+.index-newRank-bar{
+	width:50%;
+	height:5px;
+	background-color:#099;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+/*公司首页最新上榜和最佳人气模块样式  end*/

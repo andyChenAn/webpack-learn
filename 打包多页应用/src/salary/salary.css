@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+.salary-desc-box{
+	text-align: center;
+	margin-bottom: 10px;
+}
+.salary-average{
+	color: #090;
+	font-size: 20px;
+	margin-bottom: 5px;
+}
+.salary-average-number{
+	color: #f60;
+	font-size: 36px;
+	font-weight: bold;
+	display: block;
+	line-height: 36px;
+	margin-bottom: 5px;
+}
+.salary-average-desc{
+	color: #999;
+	text-align: center;
+}
+.salary-average-desc em{
+	color: #f60;
+}
+.salary-env-quality{
+	text-align: center;
+	font-size: 16px;
+}
+.salary-env-air{
+	font-size: 16px;
+	height: 22px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.air-degree{
+	text-align: center; 
+	display:inline-block;
+	width: 70px;
+	height: 18px; 
+	line-height: 18px; 
+	color: #fff;
+}
+.air-number{
+	width: 50px;
+	height:20px;
+	line-height:20px;
+	display: inline-block;
+	font-family:Arial,sans-serif;
+	text-align: center;
+	background: #fff;
+	margin-left: 1px;
+}
+.air-quality{
+	position: relative;
+	top: 2px;
+}
+.salary-average-standard{
+	display: -webkit-flex;
+	display: flex;
+	margin-bottom:10px;
+	height:16px;
+	align-items:center;
+}
+.salary-average-year{
+	width:75px;
+	font-size:16px;
+	font-weight:bold;
+}
+.salary-average-progressbar{
+	-webkit-flex:1;
+	flex:1;
+	margin-right:5px;
+}
+.salary-average-progressbar span{
+	display:block; 
+	height:15px; 
+	background:#fc6; 
+}
+.salary-average-money{
+	font-size:16px;
+}
+.salary-average-trend{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+	text-align: right;
+}
+.up-arrow-data{
+	color:#009900;
+	font-size:14px;
+}
+.down-arrow-data{
+	color:#FF6600;
+	font-size:14px;
+}
+.salary-area-rank{
+	display: flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	align-items:center;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.salary-area-rank:last-child{
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none;
+}
+.salary-area-rank-list{
+	flex:1;
+	-webkit-flex:1;
+	-moz-flex:1;
+	-ms-flex:1;
+}
+.salary-area-rank-list:last-child{
+	text-align: right;
+}
+.salary-area-rank-list:nth-child(2){
+	text-align: center;
+}
+.salary-area-ranking{
+	width: 20px;
+    display: inline-block;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+}
+.salary-copyright-box{
+	color: #999;
+	font-size: 14px;
+	background-color: #fff;
+	padding:10px 15px;
+}
