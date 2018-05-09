@@ -17,5 +17,5 @@ webpack是一个模块打包工具。
 - [打包单页应用](https://github.com/andyChenAn/webpack-learn/tree/master/打包单页应用)
 - [打包多页应用](https://github.com/andyChenAn/webpack-learn/tree/master/打包多页应用)
 - [服务端渲染](https://github.com/andyChenAn/webpack-learn/tree/master/服务端渲染)
-
+- [编写loader](https://github.com/andyChenAn/webpack-learn/tree/master/编写loader)
 
