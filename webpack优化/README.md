@@ -50,3 +50,87 @@ module.noParse，表示忽略对于没有采用模块化的文件解析处理，
 .dll文件，叫做动态链接库。在一个动态链接库中可以包含其他模块调用的函数和数据。那其实就是把公共的部分提取出来，作为一个动态链接库供其他模块调用。具体代码可以参考"使用dll来优化"这个例子。
 #### 8、使用happypack
 通过创建多个进程来打包文件，从而提升构建速度。
+```
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HappyPack = require('happypack');
+module.exports = {
+    entry : {
+        app : './app.js'
+    },
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : '[name].js'
+    },
+    mode : 'development',
+    module : {
+        rules : [
+            {
+                test : /\.js$/,
+                use : 'happypack/loader?id=babel',
+                exclude : path.resolve(__dirname , 'node_modules')
+            },
+            {
+                test : /\.css$/,
+                use : ExtractTextPlugin.extract({
+                    use : 'happypack/loader?id=css'
+                })
+            }
+        ]
+    },
+    plugins : [
+        new HappyPack({
+            id : 'babel',
+            loaders : ['babel-loader?cacheDirectory']
+        }),
+        new HappyPack({
+            id : 'css',
+            loaders : ['css-loader']
+        }),
+        new ExtractTextPlugin({
+            filename : '[name].css'
+        })
+    ]
+}
+```
+#### 9、使用ParallelUglifyPlugin
+一般来说，我们上线代码都是需要压缩的，而webpack里面也内置了压缩功能，但是使用webpack内部的压缩工具只能一个一个的压缩文件，而使用ParallelUglifyPlugin插件可以并行压缩几个文件，其实也是创建多个进程来压缩文件。
+
+```
+const path = require('path');
+const ParallelUglifyPlugin = require('webpack-parallel-uglify-plugin');
+module.exports = {
+    entry : {
+        app : './app.js'
+    },
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : '[name].js'
+    },
+    mode : 'development',
+    module : {
+        rules : [
+            {
+                test : /\.js$/,
+                use :'babel-loader?cacheDirectory'
+            }
+        ]
+    },
+    plugins : [
+        new ParallelUglifyPlugin({
+            uglifyJS : {
+                output : {
+                    beautify : false,
+                    comments : false
+                },
+                compress : {
+                    warnings : false,
+                    drop_console : true,
+                    collapse_vars : true,
+                    reduce_vars : true
+                }
+            }
+        })
+    ]
+}
+```
