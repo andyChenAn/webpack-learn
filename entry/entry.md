@@ -1,13 +1,15 @@
-# entry
+# entry（入口）
 webpack的配置项有很多，首先我们需要了解的是"entry"配置项。
 
-entry：表示打包的入口文件，从这个文件开始打包执行，如果入口文件中引入了其他文件，那么会按照依赖一次打包执行。
+entry：表示打包的入口文件，从这个文件开始打包执行，如果入口文件中引入了其他文件，那么会按照依赖依次打包执行。
+
+entry的值可以是字符串，数组，对象。
 
 entry配置项可以是以下值：
 - **字符串**
 
 如果是单入口文件，entry的值可以是字符串，比如：
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -23,7 +25,7 @@ module.exports = {
 - **数组**
 
 如果entry的值是一个数组，那么应用程序会依次执行数组中的每一个文件，并将所有文件打包到一个指定的文件中，比如：
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -38,7 +40,7 @@ module.exports = {
 - **对象**
 
 如果有多个入口文件，那么我们可以设置entry的值是一个对象，而在打包完后输出的文件中，entry中的每个键值就是对应的输出文件的文件名，比如：
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -56,7 +58,7 @@ module.exports = {
 - **函数**
 
 如果entry配置项被设置为一个函数，那么会调用这个函数，将返回值作为入口文件进行打包，这里需要注意的是，返回值可以是一个字符串，也可以是一个对象，或数组，打包方式和上面的对象或数组类似，比如：
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -71,8 +73,9 @@ module.exports = {
 }
 ```
 - **promise对象**
+
 如果entry配置项的值是一个promise对象，比如：
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -93,7 +96,7 @@ module.exports = {
 ```
 
 **注意：如果entry是一个数组，并且output对象中，指明了library键值，那么只会导出最后一项**
-```
+```javascript
 // webpack.config.js
 const path = require('path');
 module.exports = {
@@ -107,20 +110,20 @@ module.exports = {
 	mode : 'development'
 }
 ```
-```
+```javascript
 // app.js
 var a = 'hello andy';
 exports.a = a;
 ```
 
-```
+```javascript
 // app2.js
 var b = 'hello world';
 exports.b = b;
 ```
 
 比如说上面的例子中，我们通过amd的方式来加载我们自己打包好的这个库，所以打包后的文件会以define()的方式来打包文件，这时我们引入require.js文件，再在浏览器上引入打包后的文件，我们就可以通过amd的方式来加载打包文件了。
-```
+```javascript
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,6 +143,35 @@ exports.b = b;
 </html>
 ```
 打开浏览器调试工具，可以看到输出的结构就是最后打包的那个文件的结果，第一个文件不会输出：
-```
+```javascript
 {b: "hello world"}
+```
+### 常见应用场景
+##### 1. 分离应用程序和第三方库入口
+webpack是将所有的文件都打包到一个文件中，如果我们需要将引入的第三方库文件打包到其他文件中，那么我们可以将entry设置为一个对象，配置多个入口，将第三方库的文件都打包到一个文件中，将应用程序文件单独打包到一个文件中，比如：
+
+```javascript
+const path = require('path');
+module.exports = {
+    entry : {
+        app : './src/index.js',
+        vendors : ['./src/add.js' , './src/jquery.js']
+    },
+    mode : 'development',
+    output : {
+        path : path.resolve(__dirname , 'dist'),
+        filename : '[name].js'
+    }
+};
+```
+##### 2. 多页面应用程序
+webpack不仅可以打包单页应用，也可以打包多页应用。一个应用程序有多个页面，每个页面都会有自己的js文件，那么我们可以针对不同的页面，打包各自的js文件。
+```javascript
+const config = {
+  entry: {
+    pageOne: './src/pageOne/index.js',
+    pageTwo: './src/pageTwo/index.js',
+    pageThree: './src/pageThree/index.js'
+  }
+};
 ```
