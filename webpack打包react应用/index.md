@@ -438,4 +438,4 @@ module.exports = {
 
 ```
 npm install friendly-errors-webpack-plugin --save-dev
-```
+``` 
