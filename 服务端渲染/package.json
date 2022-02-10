@@ -30,7 +30,7 @@
     "jquery": "^3.3.1",
     "less-loader": "^4.1.0",
     "lodash": "^4.17.5",
-    "node-sass": "^4.8.3",
+    "node-sass": "^7.0.0",
     "postcss-loader": "^2.1.4",
     "precss": "^3.1.2",
     "raw-loader": "^0.5.1",
